@@ -3,11 +3,14 @@
 - [__Live chat with professional support__](https://messenger.totaljs.com)
 - [__HelpDesk with professional support__](https://helpdesk.totaljs.com)
 - [Documentation](https://docs.totaljs.com)
-- [Wiki](https://wiki.totaljs.com)
 
-# Total.js: SPA template
+![SPA template](https://cdn.totaljs.com/images/template-spa.png)
 
-A simple project template for Single Page Application optimized for mobile devices.
+# Total.js: jComponent SPA template
+
+[![MIT License][license-image]][license-url]
+
+A simple project template for Single Page Application __optimized for mobile devices__.
 
 - download example
 - open terminal / command-line
@@ -19,3 +22,6 @@ A simple project template for Single Page Application optimized for mobile devic
 ## Support us
 
 We have great plans for the near future. We have open several projects and ideas which can help you. We're looking for sponsors which can support us financially. [__Contact us__](https://www.totaljs.com/contact/).
+
+[license-image]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat
+[license-url]: license.txt
