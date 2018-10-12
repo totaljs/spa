@@ -6,7 +6,7 @@
 
 ![SPA template](https://cdn.totaljs.com/images/template-spa.png)
 
-# Total.js: jComponent SPA template
+# Total.js + jComponent SPA template
 
 [![MIT License][license-image]][license-url]
 

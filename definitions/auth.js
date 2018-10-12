@@ -1,11 +1,11 @@
 AUTH(function(req, res, flags, next) {
 
 	/*
-	var cookie = req.cookie(CONF.cookie);
+	var cookie = req.cookie(F.config.cookie);
 	if (!cookie || cookie.length < 20)
 		return next(false);
 
-	var obj = F.decrypt(cookie, CONF.authkey);
+	var obj = F.decrypt(cookie, F.config.authkey);
 	if (!obj)
 		return next(false);
 
