@@ -1,0 +1,116 @@
+@{layout('')}
+@{title(config.name)}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=10" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover" />
+	<meta name="robots" content="all,follow" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+	<meta name="apple-mobile-web-app-title" content="@{'%name'}" />
+	<link rel="apple-touch-icon" href="/img/icon.png" />
+	<link rel="stylesheet" href="//cdn.componentator.com/spa.min@16.css" />
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,700" />
+	<script src="//cdn.componentator.com/spa.min@16.js"></script>
+	@{import('meta', 'head', 'default.css', 'default.js', 'favicon.ico')}
+</head>
+<body data-jc="exec" class="invisible" data-jc-class="invisible">
+
+	<div data-jc="loading" class="hidden"></div>
+	<div data-jc="LAZY autocomplete__null__height:200"></div>
+	<div data-jc="LAZY snackbar__null__button:@(Dismiss)"></div>
+	<div data-jc="LAZY menu" class="hidden"></div>
+	<div data-jc="LAZY confirm"></div>
+
+	<header>
+		<button class="exec" data-exec="mainmenu"><i class="fa fa-navicon"></i></button>
+		<a href="/" class="logo"><img src="@{'logo.svg'}" alt="@{'%name'}" border="0" class="img-responsive" /></a>
+		<div class="user">
+			<div class="avatar">@{user.initials}</div>
+		</div>
+		<div class="tools">
+			<a href="@{#}/help/" class="R"><i class="fa fa-question-circle"></i><span>@(Help)</span></a>
+			<a href="@{#}/settings/" class="R"><i class="fa fa-cog"></i><span>@(Settings)</span></a>
+			<a href="@{#}/logout/"><i class="fa fa-sign-out"></i><span>@(Sign out)</span></a>
+		</div>
+	</header>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-2 col-sm-3 mainmenu-container" data-jc="selected__common.page__selector:a.R">
+
+				<div class="mainmenu">
+					<div class="scroller-xs">
+
+						<div class="caption">@(Navigation)</div>
+						<nav class="links">
+							<a href="@{#}/" class="R" data-if="dashboard"><i class="fa fa-dashboard"></i>@(Dashboard)</a>
+							<a href="@{#}/users/" class="R" data-if="users"><i class="fa fa-clock-o"></i>@(Users)</a>
+							<a href="@{#}/settings/" class="R" data-if="settings"><i class="fa fa-box"></i>@(Settings)</a>
+						</nav>
+						<br />
+						<div class="caption">@(My account)</div>
+						<nav class="links">
+							<a href="@{#}/notifications/" class="R" data-if="notifications"><i class="fa fa-bell"></i>@(Notifications)<b>2</b></a>
+							<a href="@{#}/account/" class="R" data-if="account"><i class="fa fa-cog"></i>@(My account)</a>
+						</nav>
+						<br />
+						<div class="caption">@(Help)</div>
+						<nav class="links">
+							<a href="https://www.totaljs.com/support/" target="_blank"><i class="fa fa-credit-card"></i>@(Support)</a>
+							<a href="https://componentator.com" target="_blank"><i class="fa fa-plug"></i>@(UI components)</a>
+						</nav>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-10 col-sm-9">
+				<div id="body">
+					<div data-jc="part__common.page__if:dashboard;url:/parts/dashboard.html;reload:dashboard/reload;cleaner:5"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div data-jc="importer__common.form__if:detailform;cleaner:5;url:/forms/detail.html"></div>
+
+	@{json(user, 'userdata')}
+
+	<script>
+
+		var common = {};
+		var user = PARSE('#userdata');
+
+		NAV.clientside('.R');
+
+		ROUTE('/', function() {
+			SET('common.page', 'dashboard');
+		});
+
+		ROUTE('/users/', function() {
+			SET('common.page', 'users');
+		});
+
+		ROUTE('/settings/', function() {
+			SET('common.page', 'settings');
+		});
+
+		ROUTE('/notifications/', function() {
+			SET('common.page', 'notifications');
+		});
+
+		ROUTE('/account/', function() {
+			SET('common.page', 'account');
+		});
+
+		ROUTE('/help/', function() {
+			SET('common.page', 'help');
+		});
+
+	</script>
+
+</body>
+</html>
