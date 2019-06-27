@@ -13,18 +13,18 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="default" />
 	<meta name="apple-mobile-web-app-title" content="@{'%name'}" />
 	<link rel="apple-touch-icon" href="/img/icon.png" />
-	<link rel="stylesheet" href="//cdn.componentator.com/spa.min@16.css" />
+	<link rel="stylesheet" href="//cdn.componentator.com/spa.min@17.css" />
 	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,700" />
-	<script src="//cdn.componentator.com/spa.min@16.js"></script>
+	<script src="//cdn.componentator.com/spa.min@17.js"></script>
 	@{import('meta', 'head', 'default.css', 'default.js', 'favicon.ico')}
 </head>
-<body data-jc="exec" class="invisible" data-jc-class="invisible">
+<body data---="exec" class="invisible" data-jc-class="invisible">
 
-	<div data-jc="loading" class="hidden"></div>
-	<div data-jc="LAZY autocomplete__null__height:200"></div>
-	<div data-jc="LAZY snackbar__null__button:@(Dismiss)"></div>
-	<div data-jc="LAZY menu" class="hidden"></div>
-	<div data-jc="LAZY confirm"></div>
+	<div data---="loading" class="hidden"></div>
+	<div data---="LAZY autocomplete__null__height:200"></div>
+	<div data---="LAZY snackbar__null__button:@(Dismiss)"></div>
+	<div data---="LAZY menu" class="hidden"></div>
+	<div data---="LAZY confirm"></div>
 
 	<header>
 		<button class="exec" data-exec="mainmenu"><i class="fa fa-navicon"></i></button>
@@ -41,7 +41,7 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-2 col-sm-3 mainmenu-container" data-jc="selected__common.page__selector:a.R">
+			<div class="col-lg-2 col-sm-3 mainmenu-container" data---="selected__common.page__selector:a.R">
 
 				<div class="mainmenu">
 					<div class="scroller-xs">
@@ -69,13 +69,13 @@
 			</div>
 			<div class="col-lg-10 col-sm-9">
 				<div id="body">
-					<div data-jc="part__common.page__if:dashboard;url:/parts/dashboard.html;reload:dashboard/reload;cleaner:5"></div>
+					<div data---="part__common.page__if:dashboard;url:/parts/dashboard.html;reload:dashboard/reload;cleaner:5"></div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div data-jc="importer__common.form__if:detailform;cleaner:5;url:/forms/detail.html"></div>
+	<div data---="importer__common.form__if:detailform;cleaner:5;url:/forms/detail.html"></div>
 
 	@{json(user, 'userdata')}
 

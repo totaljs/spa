@@ -10,7 +10,7 @@
 
 [![MIT License][license-image]][license-url]
 
-A simple project template for Single Page Application __optimized for mobile devices__.
+A simple project template for Single Page Application __optimized for mobile devices__. Optimized for Total.js `v3.3.0`.
 
 - download example
 - open terminal / command-line

@@ -1,13 +1,13 @@
-AUTH(function(req, res, flags, next) {
+AUTH(function($) {
 
 	/*
-	var cookie = req.cookie(F.config.cookie);
+	var cookie = $.cookie(CONF.cookie);
 	if (!cookie || cookie.length < 20)
 		return next(false);
 
-	var obj = F.decrypt(cookie, F.config.authkey);
+	var obj = DECRYPTREQ($.req, cookie, CONF.authkey);
 	if (!obj)
-		return next(false);
+		return $.invalid();
 
 	var session = MAIN.sessions[obj.id];
 	if (session) {
@@ -27,7 +27,7 @@ AUTH(function(req, res, flags, next) {
 	user.initials = tmp[0][0] + tmp[1][0];
 
 	MAIN.sessions[user.id] = user;
-	next(true, user);
+	$.success(user);
 });
 
 // Clears expired sessions
