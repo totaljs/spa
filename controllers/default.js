@@ -1,6 +1,6 @@
 exports.install = function() {
-	ROUTE('/*', 'index', ['authorize']);
-	ROUTE('/*', 'login', ['unauthorize']);
+	ROUTE('+GET /*', 'index');
+	ROUTE('G-ET /*', 'login');
 
 	// File routes
 	FILE('/manifest.json', manifest);

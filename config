@@ -1,5 +1,5 @@
 name                  : Total.js SPA
-allow-custom-titles   : true
+allow_custom_titles   : true
 
 cookie                : __sauth
 authkey               : SPAsessIOn

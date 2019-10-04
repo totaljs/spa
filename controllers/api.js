@@ -1,7 +1,5 @@
 exports.install = function() {
-	GROUP(['authorize'], function() {
-		ROUTE('GET    /logout/', redirect_logout);
-	});
+	ROUTE('+GET    /logout/', redirect_logout);
 };
 
 function redirect_logout() {
