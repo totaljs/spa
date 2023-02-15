@@ -13,9 +13,9 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="default" />
 	<meta name="apple-mobile-web-app-title" content="@{'%name'}" />
 	<link rel="apple-touch-icon" href="/img/icon.png" />
-	<link rel="stylesheet" href="//cdn.componentator.com/spa.min@17.css" />
-	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,700" />
-	<script src="//cdn.componentator.com/spa.min@17.js"></script>
+	<link rel="stylesheet" href="//cdn.componentator.com/spa.min@19.css" />
+	<script src="//cdn.componentator.com/spa.min@19.js"></script>
+	<script src="@{REPO.ui}"></script>
 	@{import('meta', 'head', 'default.css', 'default.js', 'favicon.ico')}
 </head>
 <body data---="exec" class="invisible" data-jc-class="invisible">
@@ -75,7 +75,7 @@
 		</div>
 	</div>
 
-	<div data---="importer__common.form__if:detailform;cleaner:5;url:/forms/detail.html"></div>
+	<div data---="importer__common.form__if:detailform;url:/forms/detail.html"></div>
 
 	@{json(user, 'userdata')}
 

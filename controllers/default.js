@@ -1,4 +1,5 @@
 exports.install = function() {
+
 	ROUTE('+GET /*', 'index');
 	ROUTE('-GET /*', 'login');
 
