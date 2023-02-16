@@ -18,64 +18,70 @@
 	<script src="@{REPO.ui}"></script>
 	@{import('meta', 'head', 'default.css', 'default.js', 'favicon.ico')}
 </head>
-<body data---="exec" class="invisible" data-jc-class="invisible">
+<body data-jc-class="invisible">
 
-	<div data---="loading" class="hidden"></div>
-	<div data---="LAZY autocomplete__null__height:200"></div>
-	<div data---="LAZY snackbar__null__button:@(Dismiss)"></div>
-	<div data---="LAZY menu" class="hidden"></div>
-	<div data---="LAZY confirm"></div>
+	<ui-component name="exec"></ui-component>
+	<ui-component name="loading" class="hidden"></ui-component>
+	<ui-component name="errorhandler"></ui-component>
+
+	<ui-component name="LAZY autocomplete" config="height:200"></ui-component>
+	<ui-component name="LAZY snackbar" config="button:@(Dismiss)"></ui-component>
+	<ui-component name="LAZY menu" class="hidden"></ui-component>
+	<ui-component name="LAZY confirm"></ui-component>
+	<ui-component name="LAZY message"></ui-component>
 
 	<header>
-		<button class="exec" data-exec="mainmenu"><i class="fa fa-navicon"></i></button>
 		<a href="/" class="logo"><img src="@{'logo.svg'}" alt="@{'%name'}" border="0" class="img-responsive" /></a>
 		<div class="user">
 			<div class="avatar">@{user.initials}</div>
 		</div>
 		<div class="tools">
-			<a href="@{#}/help/" class="R"><i class="fa fa-question-circle"></i><span>@(Help)</span></a>
-			<a href="@{#}/settings/" class="R"><i class="fa fa-cog"></i><span>@(Settings)</span></a>
-			<a href="@{#}/logout/"><i class="fa fa-sign-out"></i><span>@(Sign out)</span></a>
+			<a href="@{#}/help/" class="R"><i class="ti ti-question-circle"></i><span>@(Help)</span></a>
+			<a href="@{#}/settings/" class="R"><i class="ti ti-cog"></i><span>@(Settings)</span></a>
+			<a href="@{#}/logout/"><i class="ti ti-sign-out"></i><span>@(Sign out)</span></a>
 		</div>
 	</header>
 
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-2 col-sm-3 mainmenu-container" data---="selected__common.page__selector:a.R">
+			<ui-component name="selected" path="common.page" config="selector:a.R" class="col-lg-2 col-sm-3 mainmenu-container">
 
 				<div class="mainmenu">
 					<div class="scroller-xs">
 
 						<div class="caption">@(Navigation)</div>
 						<nav class="links">
-							<a href="@{#}/" class="R" data-if="dashboard"><i class="fa fa-dashboard"></i>@(Dashboard)</a>
-							<a href="@{#}/users/" class="R" data-if="users"><i class="fa fa-clock-o"></i>@(Users)</a>
-							<a href="@{#}/settings/" class="R" data-if="settings"><i class="fa fa-box"></i>@(Settings)</a>
+							<a href="@{#}/" class="R" data-if="dashboard"><i class="ti ti-dashboard"></i>@(Dashboard)</a>
+							<a href="@{#}/users/" class="R" data-if="users"><i class="ti ti-clock"></i>@(Users)</a>
+							<a href="@{#}/settings/" class="R" data-if="settings"><i class="ti ti-box"></i>@(Settings)</a>
 						</nav>
 						<br />
 						<div class="caption">@(My account)</div>
 						<nav class="links">
-							<a href="@{#}/notifications/" class="R" data-if="notifications"><i class="fa fa-bell"></i>@(Notifications)<b>2</b></a>
-							<a href="@{#}/account/" class="R" data-if="account"><i class="fa fa-cog"></i>@(My account)</a>
+							<a href="@{#}/notifications/" class="R" data-if="notifications"><i class="ti ti-bell"></i>@(Notifications)<b>2</b></a>
+							<a href="@{#}/account/" class="R" data-if="account"><i class="ti ti-cog"></i>@(My account)</a>
 						</nav>
 						<br />
 						<div class="caption">@(Help)</div>
 						<nav class="links">
-							<a href="https://www.totaljs.com/support/" target="_blank"><i class="fa fa-credit-card"></i>@(Support)</a>
-							<a href="https://componentator.com" target="_blank"><i class="fa fa-plug"></i>@(UI components)</a>
+							<a href="https://www.totaljs.com/support/" target="_blank"><i class="ti ti-credit-card"></i>@(Support)</a>
+							<a href="https://componentator.com" target="_blank"><i class="ti ti-plug"></i>@(UI components)</a>
 						</nav>
 					</div>
 				</div>
-			</div>
+
+			</ui-component>
 			<div class="col-lg-10 col-sm-9">
 				<div id="body">
-					<div data---="part__common.page__if:dashboard;url:/parts/dashboard.html;reload:dashboard/reload;cleaner:5"></div>
+					<ui-component name="page" path="common.page" config="if:dashboard;id:parking;url:/pages/dashboard.html;reload:?/reload"></ui-component>
 				</div>
 			</div>
+
+			<button class="exec menu" data-exec="mainmenu"><i class="ti ti-navicon"></i></button>
 		</div>
 	</div>
 
-	<div data---="importer__common.form__if:detailform;url:/forms/detail.html"></div>
+	<ui-component name="importer" path="common.form" config="if:detailform;url:/forms/detail.html"></ui-component>
 
 	@{json(user, 'userdata')}
 
@@ -114,3 +120,4 @@
 
 </body>
 </html>
+

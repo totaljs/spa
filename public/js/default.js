@@ -1,4 +1,4 @@
-ON('resize', function() {
+ON('resize2', function() {
 	var el = $('#body');
 	el.css('height', WH - el.offset().top);
 	if (WIDTH() === 'xs') {
