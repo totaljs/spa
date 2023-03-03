@@ -1,4 +1,4 @@
-[![Support](https://www.totaljs.com/img/button-support.png)](https://www.totaljs.com/support/)
+# Total.js: SPA
 
 - [Chat support](https://platform.totaljs.com/?open=messenger)
 - [Join __Total.js Telegram__](https://t.me/totalplatform)
